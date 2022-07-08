@@ -16,7 +16,7 @@ const Voting = ({navigation}) => {
 
  useEffect(() => {
   // Update the document title using the browser API
-  axios.get("http://192.168.8.103:4500/candidate/get-all")
+  axios.get("http://localhost:4500/candidate/get-all")
   .then(res=>{
     addData(res.data.data);
   })
@@ -26,7 +26,7 @@ const Voting = ({navigation}) => {
 })
 const vote=async(id,votes)=>{
   let v=votes+1;
-  await axios.put(`http://192.168.1.70:4300/candidate/update/${id}`,{
+  await axios.put(`http://localhost:4500/candidate/update/${id}`,{
     votes:v
   }).then(res=>{
     navigation.navigate("Views");

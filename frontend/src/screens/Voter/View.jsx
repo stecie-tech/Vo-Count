@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View ,TouchableOpacity,TextInput} from 'react-native'
+import { StyleSheet, Text,Button, View ,TouchableOpacity,TextInput} from 'react-native'
 import RNPickerSelect from "react-native-picker-select";
 import React from 'react'
 import { useState } from 'react';
@@ -13,7 +13,7 @@ const Views = ({navigation}) => {
 
 
   const register=()=>{
-    axios.post("http://192.168.8.103:4500/candidate/register",{
+    axios.post("http://localhost:4500/candidate/register",{
       name: names,
       nationalId: nationalId,
       gender: gender,
@@ -32,9 +32,12 @@ const Views = ({navigation}) => {
   }
 
   return (
-    <View>
-      <Text style={{marginTop:30,fontSize:20,color:"#FF3030", fontWeight:"bold", marginLeft:20}}>Add NEW CANDIDATE</Text>
+    <View style={{backgroundColor:"red",height:300}}>
 
+      <Text style={{marginTop:30,fontSize:20,color:"#FF3030", fontWeight:"bold", marginLeft:20}}>Add NEW CANDIDATE</Text>
+<Button
+title="Register"
+/>
       <View style={{marginTop:30}}>
       <View>
   <TextInput
@@ -67,6 +70,10 @@ const Views = ({navigation}) => {
                  ]}
              />
   </View>
+
+  <TouchableOpacity onPress={()=>{register()}}  style={styles.addButton}>
+        <Text >Register</Text>
+      </TouchableOpacity>
   <View>
   <TextInput
         style={styles.textA}
@@ -82,10 +89,7 @@ const Views = ({navigation}) => {
 </View>
 
 
-<TouchableOpacity onPress={()=>{register()}}  style={{backgroundColor:"#FF3030",padding:15,alignItems:"center"
-     ,marginTop:40 ,marginLeft:40,marginRight:40,borderRadius:4}}>
-        <Text style={{color:"white"}}>Register</Text>
-      </TouchableOpacity>
+
       </View>
     
   )
@@ -94,6 +98,12 @@ const Views = ({navigation}) => {
 export default Views
 
 const styles = StyleSheet.create({
+  container:{
+    backgroundColor:"red",
+    width:50,
+    height:300,
+    flex:1
+  },
   input: {
     height: 50,
     marginTop:20,
@@ -117,5 +127,14 @@ const styles = StyleSheet.create({
     marginRight:40,
     height:200,
     textAlignVertical: 'top',
+  },
+  addButton:{
+    backgroundColor:"#FF3030",
+    padding:15,alignItems:"center",
+    marginTop:40 ,
+    marginLeft:40,
+    marginRight:40,
+    borderRadius:4,
+    marginBottom:50
   }
 })

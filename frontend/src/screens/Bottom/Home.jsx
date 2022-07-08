@@ -13,7 +13,7 @@ const Home = ({navigation}) => {
 
  useEffect(() => {
   // Update the document title using the browser API
-  axios.get("http://192.168.8.103:4500/candidate/get-all")
+  axios.get("http://localhost:4500/candidate/get-all")
   .then(res=>{
     addData(res.data.data);
   })

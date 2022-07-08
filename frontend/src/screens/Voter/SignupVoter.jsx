@@ -14,7 +14,7 @@ const Signup = ({navigation}) => {
     const [modalVisible, setModalVisible] = useState(false);
 const register=async()=>{
   console.log("in here");
- await axios.post("http://192.168.8.103:4500/voter/register",{
+ await axios.post("http://localhost:4500/voter/register",{
   name: name,
   email: email,
   phone: phone,
@@ -25,8 +25,8 @@ const register=async()=>{
   })
   .then(res=>{
 
-// navigation.navigate("Login");
 console.log(res);
+navigation.navigate("Login");
 
 
   }).catch(err=>{

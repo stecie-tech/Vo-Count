@@ -12,7 +12,7 @@ const Signup = ({navigation}) => {
     const [name,setName]=useState("");
     const [modalVisible, setModalVisible] = useState(false);
 const register=async()=>{
- await axios.post("http://192.168.8.103:4300/user/register",{
+ await axios.post("http://localhost:4500/user/register",{
     email:email,
     name:name,
     password:pass
@@ -23,6 +23,7 @@ navigation.navigate("Login")
 
 
   }).catch(err=>{
+    console.log(err)
     setModalVisible(true)
 
   })
@@ -55,7 +56,7 @@ navigation.navigate("Login")
       </View>
       <Text style={{fontWeight:"bold",fontSize:15, textAlign:"center",marginTop:50}}>Welcome to Vo-Count!!</Text>
       <Text style={{marginTop:15,marginLeft:40,marginRight:40,textAlign:"center"}}>
-      Signup To Vote
+      Admin Registration
       </Text>
       
 

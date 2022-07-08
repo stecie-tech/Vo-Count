@@ -38,7 +38,7 @@ const [modalVisible, setModalVisible] = useState(false);
 
 const login=()=>{
   navigation.navigate("Voting")
-  axios.post("http://192.168.8.103:4500/voter/login",{
+  axios.post("http://localhost:4500/voter/login",{
     email:email,
     password:pass
   }).then((res)=>{

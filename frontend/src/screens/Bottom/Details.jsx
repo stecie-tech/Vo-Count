@@ -13,7 +13,7 @@ const Details = ({navigation}) => {
 
 
   const register=()=>{
-    axios.post("http://192.168.8.103:4500/candidate/register",{
+    axios.post("http://localhost:4500/candidate/register",{
       name: names,
       nationalId: nationalId,
       gender: gender,

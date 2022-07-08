@@ -38,7 +38,7 @@ const dispatch = useDispatch()
 const [modalVisible, setModalVisible] = useState(false);
 
 const login=()=>{
-  axios.post("http://192.168.8.103:4500/user/login",{
+  axios.post("http://localhost:4500/user/login",{
     email:email,
     password:pass
   }).then((res)=>{
